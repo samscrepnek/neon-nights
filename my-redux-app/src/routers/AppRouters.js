@@ -12,7 +12,7 @@ import "../scss/styles.scss";
 
 function AppRouter() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={"/neon-nights"}>
       <div className="site-wrapper">
         <Nav />
         <Routes>
