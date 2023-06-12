@@ -31,7 +31,7 @@ const MovieList = (props) => {
       {props.movies.map((movie) => (
         <div key={movie.id} className="image-container d-flex justify-content-start m-3">
           <div className="movie-fav">
-            <Link key={movie.id} to={`/Single/${movie.id}`}>
+            <Link key={movie.id} to={`/single/${movie.id}`}>
               {movie.poster_path ? <img src={posterPath + movie.poster_path} alt={movie.title}></img> : <img src={`${imageFolderPath}image-not-available.svg`} alt="Image not Available" className="default-image"></img>}
             </Link>
             <div className="hover">
@@ -39,9 +39,9 @@ const MovieList = (props) => {
               <p className="overview">{movie.overview && `${truncateText(movie.overview, 150)}...`}</p>
               <p className="date">{movie.release_date}</p>
               <p className="rating">{`${Math.round(movie.vote_average * 10)}%`}</p>
-              <a href={`/Single/${movie.id}`}>
+              <Link to={`/single/${movie.id}`}>
                 <button className="more-info">More Info</button>
-              </a>
+              </Link>
             </div>
             <section className="movie-info">
               <h2>{movie.title}</h2>
